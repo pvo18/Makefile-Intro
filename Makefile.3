@@ -1,0 +1,36 @@
+#######
+# SIMPAGER
+#######
+
+##Note: to suppress echoing command, put @ in front
+# Remember to tab for each command!
+
+CXX = g++
+CXXFLAGS = -O2
+
+###
+# $^ - "All the dependencies"
+# $< - "First dependency"
+# $@ - "Target name"
+
+
+simpager: main.o fifo.o lru.o opt.o rand.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+fifo.o: fifo.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+lru.o: lru.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+opt.o: opt.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+rand.o: rand.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+clean:
+	/bin/rm -f *.o simpager

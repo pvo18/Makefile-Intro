@@ -1,0 +1,31 @@
+#######
+# SIMPAGER
+#######
+
+##Note: to suppress echoing command, put @ in front
+# Remember to tab for each command
+hello:
+	@echo "Greetings and Salutations!"
+	@echo "Ore wa Gundam-desu!"
+	@echo "OREO!!!!"
+
+simpager: main.o fifo.o lru.o opt.o rand.o
+	g++ -o simpager main.o fifo.o lru.o opt.o rand.o
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+fifo.o: fifo.cpp
+	g++ -c fifo.cpp
+
+lru.o: lru.cpp
+	g++ -c lru.cpp
+
+opt.o: opt.cpp
+	g++ -c opt.cpp
+
+rand.o: rand.cpp
+	g++ -c rand.cpp
+
+clean:
+	/bin/rm -f *.o simpager

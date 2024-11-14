@@ -1,0 +1,18 @@
+#####
+# SIMPAGER MAKEFILE
+#####
+
+target: list of dependencies
+	cmd 1
+	cmd 2
+	cmd 3
+	...
+
+target2: list of dependencies
+	cmds 1
+
+target3: list of depen
+	cmds
+
+target4:
+	cmds
